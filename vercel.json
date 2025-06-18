@@ -1,35 +1,28 @@
-// vercel.json (in the root of your project)
 {
   "version": 2,
   "builds": [
     {
-      "src": "backend/server.js", // Path to your backend's entry file
+      "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["backend/node_modules/**"] // Ensure backend node_modules are bundled
+        "includeFiles": ["backend/node_modules/**"]
       }
     },
     {
-      "src": "frontend/**", // This matches all files in your frontend directory
-      "use": "@vercel/static-build" // This tells Vercel to serve them as static files
-      // If your frontend uses a build step (e.g., React, Vue, Angular), you'd use "@vercel/static-build"
-      // and specify build/output directories (see Vercel docs for framework presets)
+      "src": "frontend/**",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",       // All requests starting with /api/
-      "dest": "/backend/server.js" // Go to your backend serverless function
+      "src": "/api/(.*)",
+      "dest": "/backend/server.js"
     },
     {
-      "src": "/(.*)",           // All other requests
-      "dest": "/frontend/$1" // Serve static files from the 'frontend' directory
-      // Or if your frontend uses a specific entry file:
-      // "dest": "/frontend/index.html"
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
     }
   ],
   "installCommand": "npm install --prefix ./backend && npm install --prefix ./frontend",
   "buildCommand": "echo 'No specific build command for static frontend without framework build step'"
-  // If your frontend has a build step (e.g., 'npm run build'), specify it here:
-  // "buildCommand": "npm run build --prefix ./frontend"
 }
