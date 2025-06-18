@@ -1,0 +1,7 @@
+# Root .gitignore
+.env
+# Ignore node_modules in both subfolders
+frontend/node_modules/
+backend/node_modules/
+# And the service account key if it somehow ended up in the root
+serviceAccountKey.json
