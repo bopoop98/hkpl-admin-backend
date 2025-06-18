@@ -7,10 +7,6 @@
       "config": {
         "includeFiles": ["backend/node_modules/**"]
       }
-    },
-    {
-      "src": "frontend/**",
-      "use": "@vercel/static-build"
     }
   ],
   "routes": [
