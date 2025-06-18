@@ -1,0 +1,60 @@
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Style for required field asterisk */
+.required-asterisk {
+    color: red;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+/* Custom styles for table column widths */
+/* Teams Table */
+.team-id-col { width: 60px; }
+.logo-col { width: 56px; }
+.team-name-col, .english-name-col { width: 150px; }
+.played-col, .wins-col, .losses-col, .draws-col, .goals-for-col, .goals-against-col { width: 60px; }
+.team-actions-col { width: 100px; }
+
+/* Players Table */
+.player-name-col { width: 200px; }
+.english-name-col { width: 200px; }
+.shirt-number-col { width: 120px; }
+.team-col { width: 150px; }
+.position-col { width: 120px; }
+.image-col { width: 56px; }
+
+/* Matches Table */
+.match-date-col, .match-time-col, .match-teams-col, .match-score-col { width: 160px; }
+.match-status-col, .match-actions-col { width: 100px; }
+
+/* News Table */
+.news-title-col { width: 300px; }
+.news-body-col { width: 400px; }
+.news-date-col { width: 150px; }
+.news-tags-col { width: 150px; }
+.news-actions-col { width: 100px; }
+
+/* Modal styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 600px;
+}
