@@ -3,26 +3,13 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["backend/node_modules/**"]
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/backend/server.js"
-    },
-    {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
     }
-  ],
-  "installCommand": "npm install --prefix ./backend && npm install --prefix ./frontend",
-  "buildCommand": "echo 'No specific build command for static frontend without framework build step'"
+  ]
 }
